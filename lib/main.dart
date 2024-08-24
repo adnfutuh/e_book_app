@@ -1,4 +1,4 @@
-import 'package:e_book_app/module/home/screens/home_screen.dart';
+import 'package:e_book_app/screens/main_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'E_book',
-      home: HomeScreen(),
+      home: MainScreen(),
     );
   }
 }
