@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+Color borderRecentBook = const Color(0xFFF3F3F3);
 Color backgroundColor = const Color(0xFFE5E5E5);
 Color whiteColor = const Color(0xFFFFFFFF);
 Color blackColor = const Color(0xFF2D2D2D);
