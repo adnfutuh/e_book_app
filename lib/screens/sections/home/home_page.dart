@@ -50,8 +50,41 @@ class HomePage extends StatelessWidget {
       );
     }
 
+    Widget searchField() {
+      return Container(
+        margin: const EdgeInsets.symmetric(horizontal: 30),
+        child: TextField(
+          decoration: InputDecoration(
+              fillColor: greyColorSearchField,
+              filled: true,
+              hintText: 'Find Your Favorite Book',
+              hintStyle: meduim12.copyWith(color: greyColor),
+              border: OutlineInputBorder(
+                borderSide: BorderSide.none,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              contentPadding: const EdgeInsets.all(18),
+              isCollapsed: true,
+              suffixIcon: InkWell(
+                onTap: () {},
+                child: Container(
+                  padding: const EdgeInsets.all(15),
+                  decoration: BoxDecoration(
+                    color: greenColor,
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Icon(
+                    Icons.search_rounded,
+                    color: whiteColor,
+                  ),
+                ),
+              )),
+        ),
+      );
+    }
+
     return Scaffold(
-      backgroundColor: backgroungColor,
+      backgroundColor: backgroundColor,
       body: ListView(
         children: [
           Container(
@@ -62,7 +95,13 @@ class HomePage extends StatelessWidget {
                 bottomLeft: Radius.circular(30),
               ),
             ),
-            child: header(),
+            child: Column(
+              children: [
+                header(),
+                const SizedBox(height: 30),
+                searchField(),
+              ],
+            ),
           ),
         ],
       ),
