@@ -1,3 +1,4 @@
+import 'package:e_book_app/screens/sections/home/components/recent_book.dart';
 import 'package:e_book_app/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
@@ -86,53 +87,75 @@ class HomePage extends StatelessWidget {
 
     Widget recentBook() {
       return SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
         padding: const EdgeInsets.symmetric(horizontal: 30),
         child: Row(
           children: [
-            Container(
-              padding: const EdgeInsets.all(15),
-              height: 150,
-              decoration: BoxDecoration(
-                border: Border.all(color: borderRecentBook),
-                borderRadius: const BorderRadius.all(
-                  Radius.circular(12),
-                ),
+            RecentBook(
+              image: 'assets/images/recentbook_1.png',
+              title: 'The Magic',
+              percent: CircularPercentIndicator(
+                reverse: true,
+                radius: 25,
+                lineWidth: 7,
+                animation: true,
+                percent: 0.5,
+                progressColor: greenColor,
+                circularStrokeCap: CircularStrokeCap.round,
               ),
-              child: Row(
-                children: [
-                  Image.asset(
-                    'assets/images/recentbook_1.png',
-                    width: 90,
-                  ),
-                  const SizedBox(
-                    width: 18,
-                  ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'The Magic',
-                        style: semiBold14.copyWith(color: blackColor2),
-                      ),
-                      CircularPercentIndicator(
-                        reverse: true,
-                        radius: 25,
-                        lineWidth: 7,
-                        animation: true,
-                        percent: 0.5,
-                        progressColor: greenColor,
-                        circularStrokeCap: CircularStrokeCap.round,
-                      ),
-                      Text(
-                        '50% Completed',
-                        style: meduim14.copyWith(color: greyColorRecentBook),
-                      ),
-                    ],
-                  ),
-                ],
+              information: '50% Completed',
+            ),
+            const SizedBox(
+              width: 20,
+            ),
+            RecentBook(
+              image: 'assets/images/recentbook_2.png',
+              title: 'The Martian ',
+              percent: CircularPercentIndicator(
+                reverse: true,
+                radius: 25,
+                lineWidth: 7,
+                animation: true,
+                percent: 0.7,
+                progressColor: greenColor,
+                circularStrokeCap: CircularStrokeCap.round,
               ),
-            )
+              information: '75% Completed',
+            ),
+            const SizedBox(
+              width: 20,
+            ),
+            RecentBook(
+              image: 'assets/images/trendingbook_1.png',
+              title: 'Enchantment',
+              percent: CircularPercentIndicator(
+                reverse: true,
+                radius: 25,
+                lineWidth: 7,
+                animation: true,
+                percent: 1,
+                progressColor: greenColor,
+                circularStrokeCap: CircularStrokeCap.round,
+              ),
+              information: '100% Completed',
+            ),
+            const SizedBox(
+              width: 20,
+            ),
+            RecentBook(
+              image: 'assets/images/trendingbook_3.png',
+              title: 'LORE',
+              percent: CircularPercentIndicator(
+                reverse: true,
+                radius: 25,
+                lineWidth: 7,
+                animation: true,
+                percent: 0.8,
+                progressColor: greenColor,
+                circularStrokeCap: CircularStrokeCap.round,
+              ),
+              information: '80% Completed',
+            ),
           ],
         ),
       );
