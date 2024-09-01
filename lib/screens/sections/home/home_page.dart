@@ -3,9 +3,23 @@ import 'package:e_book_app/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  final List<String> _categories = [
+    'All Book',
+    'Novel',
+    'Manga',
+    'Manhwa',
+    'Manhua',
+    'Fairy Tales',
+  ];
+  int _isSelecteed = 0;
   @override
   Widget build(BuildContext context) {
     Widget header() {
@@ -161,8 +175,45 @@ class HomePage extends StatelessWidget {
       );
     }
 
+    Widget categories(int index) {
+      return InkWell(
+        onTap: () {
+          setState(() {
+            _isSelecteed = index;
+          });
+        },
+        child: Container(
+          margin: const EdgeInsets.only(top: 30, right: 12),
+          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 10),
+          decoration: BoxDecoration(
+            color: _isSelecteed == index ? greenColor : transParentColor,
+            borderRadius: BorderRadius.circular(6),
+          ),
+          child: Text(
+            _categories[index],
+            style: semiBold14.copyWith(
+                color: _isSelecteed == index ? whiteColor : greyColor),
+          ),
+        ),
+      );
+    }
+
+    Widget listCategories() {
+      return SingleChildScrollView(
+        padding: const EdgeInsets.only(left: 30),
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          children: _categories
+              .asMap()
+              .entries
+              .map((MapEntry map) => categories(map.key))
+              .toList(),
+        ),
+      );
+    }
+
     return Scaffold(
-      backgroundColor: backgroundColor,
+      backgroundColor: dividerColor,
       body: ListView(
         children: [
           Container(
@@ -196,6 +247,7 @@ class HomePage extends StatelessWidget {
               ],
             ),
           ),
+          listCategories(),
         ],
       ),
     );

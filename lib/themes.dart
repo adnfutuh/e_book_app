@@ -12,6 +12,7 @@ Color greyColorSearchField = const Color(0xFFF8F8F8);
 Color greyColorInfo = const Color(0xFFF7F7F7);
 Color greenColor = const Color(0xFF098B5C);
 Color dividerColor = const Color(0xFF6B6B6B);
+Color transParentColor = Colors.transparent;
 
 TextStyle semiBold20 = GoogleFonts.poppins(fontSize: 20, fontWeight: semiBold);
 TextStyle semiBold16 = GoogleFonts.poppins(fontSize: 16, fontWeight: semiBold);
