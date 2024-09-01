@@ -1,4 +1,6 @@
 import 'package:e_book_app/screens/sections/home/components/recent_book.dart';
+import 'package:e_book_app/screens/sections/home/components/trending_book.dart';
+import 'package:e_book_app/screens/sections/home/models/book.dart';
 import 'package:e_book_app/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
@@ -158,7 +160,7 @@ class _HomePageState extends State<HomePage> {
             ),
             RecentBook(
               image: 'assets/images/trendingbook_3.png',
-              title: 'LORE',
+              title: 'Lore',
               percent: CircularPercentIndicator(
                 reverse: true,
                 radius: 25,
@@ -183,7 +185,7 @@ class _HomePageState extends State<HomePage> {
           });
         },
         child: Container(
-          margin: const EdgeInsets.only(top: 30, right: 12),
+          margin: const EdgeInsets.only(top: 30, right: 12, bottom: 30),
           padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 10),
           decoration: BoxDecoration(
             color: _isSelecteed == index ? greenColor : transParentColor,
@@ -212,8 +214,26 @@ class _HomePageState extends State<HomePage> {
       );
     }
 
+    Widget trendingBook() {
+      return SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        padding: const EdgeInsets.symmetric(horizontal: 30),
+        child: Row(
+          children: bookList
+              .asMap()
+              .entries
+              .map(
+                (MapEntry map) => TrendingBook(
+                  info: bookList[map.key],
+                ),
+              )
+              .toList(),
+        ),
+      );
+    }
+
     return Scaffold(
-      backgroundColor: dividerColor,
+      backgroundColor: backgroundColor,
       body: ListView(
         children: [
           Container(
@@ -248,6 +268,17 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           listCategories(),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30),
+            child: Text(
+              'Trending Now',
+              style: semiBold16.copyWith(color: blackColor),
+            ),
+          ),
+          const SizedBox(
+            height: 30,
+          ),
+          trendingBook()
         ],
       ),
     );
