@@ -7,6 +7,7 @@ import 'sections/save/save_page.dart';
 import 'sections/userprofile/user_profile_page.dart';
 
 class MainScreen extends StatefulWidget {
+  static const nameRoute = '/';
   const MainScreen({super.key});
 
   @override

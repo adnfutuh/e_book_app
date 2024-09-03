@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
 class HomePage extends StatefulWidget {
+  static const nameRoute = '/homePage';
   const HomePage({super.key});
 
   @override

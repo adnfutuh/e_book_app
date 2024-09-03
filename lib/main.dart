@@ -1,4 +1,6 @@
 import 'package:e_book_app/screens/main_screen.dart';
+import 'package:e_book_app/screens/sections/home/home_page.dart';
+import 'package:e_book_app/screens/sections/home/pages/book_details.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,10 +13,14 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'E_book',
-      home: MainScreen(),
+      routes: {
+        MainScreen.nameRoute: (context) => const MainScreen(),
+        HomePage.nameRoute: (context) => const HomePage(),
+        BookDetail.nameRoute: (context) => const BookDetail(),
+      },
     );
   }
 }
