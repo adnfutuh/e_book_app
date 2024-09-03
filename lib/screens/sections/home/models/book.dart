@@ -14,12 +14,12 @@ List<BookList> bookList = [
   ),
   BookList(
     imageUrl: 'assets/images/trendingbook_2.png',
-    writters: 'Aaron mahnke',
+    writters: 'Aaron Mahnke',
     title: 'Lore',
   ),
   BookList(
-    imageUrl: 'assets/images/trendingbook_3.png',
-    writters: 'Spencer Johnson, M.D',
-    title: 'Who Moved My Cheese',
+    imageUrl: 'assets/images/recentbook_2.png',
+    writters: 'Andy Weir',
+    title: 'The Martian',
   ),
 ];

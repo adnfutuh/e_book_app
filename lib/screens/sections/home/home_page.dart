@@ -160,7 +160,7 @@ class _HomePageState extends State<HomePage> {
               width: 20,
             ),
             RecentBook(
-              image: 'assets/images/trendingbook_3.png',
+              image: 'assets/images/trendingbook_2.png',
               title: 'Lore',
               percent: CircularPercentIndicator(
                 reverse: true,

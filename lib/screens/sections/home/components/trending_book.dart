@@ -19,6 +19,7 @@ class TrendingBook extends StatelessWidget {
             Navigator.pushNamed(context, BookDetail.nameRoute);
           },
           child: Container(
+            margin: const EdgeInsets.only(right: 20),
             height: 160,
             width: 110,
             decoration: BoxDecoration(
