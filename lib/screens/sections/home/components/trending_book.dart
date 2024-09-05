@@ -16,16 +16,27 @@ class TrendingBook extends StatelessWidget {
       children: [
         InkWell(
           onTap: () {
-            Navigator.pushNamed(context, BookDetail.nameRoute);
+            Navigator.pushNamed(
+              context,
+              BookDetail.nameRoute,
+              arguments: {
+                'imageUrl': info.imageUrl,
+                'writters': info.writters,
+                'title': info.title,
+              },
+            );
           },
-          child: Container(
-            margin: const EdgeInsets.only(right: 20),
-            height: 160,
-            width: 110,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              image: DecorationImage(
-                image: AssetImage(info.imageUrl),
+          child: Hero(
+            tag: info.imageUrl,
+            child: Container(
+              margin: const EdgeInsets.only(right: 20),
+              height: 160,
+              width: 110,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                image: DecorationImage(
+                  image: AssetImage(info.imageUrl),
+                ),
               ),
             ),
           ),

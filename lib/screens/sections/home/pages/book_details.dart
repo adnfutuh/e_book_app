@@ -8,6 +8,7 @@ class BookDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Map data = ModalRoute.of(context)?.settings.arguments as Map;
     Widget header() {
       return Container(
         padding: const EdgeInsets.symmetric(horizontal: 30),
@@ -40,14 +41,17 @@ class BookDetail extends StatelessWidget {
     }
 
     Widget bookImage() {
-      return Container(
-        height: 267,
-        width: 175,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15),
-          image: const DecorationImage(
-            fit: BoxFit.fill,
-            image: AssetImage('assets/images/trendingbook_1.png'),
+      return Hero(
+        tag: data['imageUrl'],
+        child: Container(
+          height: 267,
+          width: 175,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(15),
+            image: DecorationImage(
+              fit: BoxFit.fill,
+              image: AssetImage(data['imageUrl']),
+            ),
           ),
         ),
       );
@@ -182,12 +186,12 @@ class BookDetail extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Enchantment',
+                        data['title'],
                         style: semiBold20.copyWith(color: blackColor),
                         overflow: TextOverflow.ellipsis,
                       ),
                       Text(
-                        'Guy Kawasaki',
+                        data['writters'],
                         style: meduim14.copyWith(color: greyColor),
                       )
                     ],
