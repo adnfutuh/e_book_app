@@ -1,6 +1,6 @@
-import 'package:e_book_app/screens/sections/home/components/recent_book.dart';
-import 'package:e_book_app/screens/sections/home/components/trending_book.dart';
-import 'package:e_book_app/screens/sections/home/models/book.dart';
+import 'package:e_book_app/screens/home/components/recent_book.dart';
+import 'package:e_book_app/screens/home/components/trending_book.dart';
+import 'package:e_book_app/screens/home/models/book.dart';
 import 'package:e_book_app/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';

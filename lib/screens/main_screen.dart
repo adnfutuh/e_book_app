@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 import '../../../themes.dart';
-import 'sections/cart/cart_page.dart';
-import 'sections/home/home_page.dart';
-import 'sections/save/save_page.dart';
-import 'sections/userprofile/user_profile_page.dart';
+import 'cart/cart_page.dart';
+import 'home/home_page.dart';
+import 'save/save_page.dart';
+import 'userprofile/user_profile_page.dart';
 
 class MainScreen extends StatefulWidget {
   static const nameRoute = '/';
