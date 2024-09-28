@@ -1,6 +1,6 @@
-import 'package:e_book_app/screens/main_screen.dart';
-import 'package:e_book_app/screens/home/home_page.dart';
-import 'package:e_book_app/screens/home/pages/book_details.dart';
+import 'package:e_book_app/screens/navbar.dart';
+import 'package:e_book_app/screens/home/page/home_page.dart';
+import 'package:e_book_app/screens/detail/page/book_details.dart';
 import 'package:flutter/material.dart';
 
 void main() {

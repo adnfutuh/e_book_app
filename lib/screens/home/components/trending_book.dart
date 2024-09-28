@@ -1,5 +1,5 @@
 import 'package:e_book_app/screens/home/models/book.dart';
-import 'package:e_book_app/screens/home/pages/book_details.dart';
+import 'package:e_book_app/screens/detail/page/book_details.dart';
 import 'package:e_book_app/themes.dart';
 import 'package:flutter/material.dart';
 
